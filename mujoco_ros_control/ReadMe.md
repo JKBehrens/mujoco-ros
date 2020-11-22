@@ -44,7 +44,15 @@ roslaunch mujoco_ros_control rviz.launch
 
 ### Simulation of Kinova gen 3 with Robotiq 852f gripper:
 
-see my other repository:
+see my other repository: coming soon!
+
+### Control the camera in mujoco via ROS
+
+You can control the camera in mujoco (images published on `/<node_name>/rgb`).
+
+```shell script
+rosrun mujoco_ros_control camera_control x y z rot elev dist
+```
 
  
 ### Resources
