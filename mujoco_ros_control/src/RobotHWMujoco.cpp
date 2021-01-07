@@ -7,7 +7,8 @@ RobotHWMujoco::RobotHWMujoco(const mjModel &m) {
     // count relevant joints
     for (size_t i = 0; i < n; ++i) {
         const auto joint_type = m.jnt_type[i];
-        if (joint_type == 0  || joint_type == mjJNT_BALL) {
+        std::cout << i << ": " << m.jnt_type[i] << std::endl;
+        if (joint_type == 0  || joint_type == 2  || joint_type == mjJNT_BALL) {
             std::cout << i << ": deleted" << std::endl;
             continue;
         }else{
@@ -28,7 +29,7 @@ RobotHWMujoco::RobotHWMujoco(const mjModel &m) {
 
         const auto joint_type = m.jnt_type[i];
 	std::cout << i << ": type: " << joint_type << std::endl;
-        if (joint_type == 0  || joint_type == mjJNT_BALL) {
+        if (joint_type == 0  || joint_type == 2 || joint_type == mjJNT_BALL) {
             const auto joint_name = mj_id2name(&m, mjOBJ_JOINT, i);
             std::cout << i << ": deleted: " << joint_name << std::endl;
             continue;
